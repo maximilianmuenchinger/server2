@@ -20,7 +20,7 @@ var A09Server;
     function handleListen() {
         console.log("Listening"); // in Konsole wird "Listening" ausgegeben wenn der addListener ausgeführt wird
     }
-    function handleRequest(_request, _response) {
+    async function handleRequest(_request, _response) {
         console.log("I hear voices!"); // in Konsole wird "i hear voices" ausgegeben wenn der addListener ausgeführt wird
         console.log("test1234");
         //response parameter
