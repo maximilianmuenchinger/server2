@@ -9,7 +9,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "intern.html"
+    "start": "node newServer2.js"
   },
   "repository": {
     "type": "git",
