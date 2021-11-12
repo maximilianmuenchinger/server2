@@ -53,9 +53,13 @@ var Endabgabe;
         
           console.log(result);
 
-          res.write(result);
+          let url = Url.parse(_request.url, true);
           
+              for (let key in url.query) {
+                  res.write(key + ":" + url.query[key] + "<br/>");  
+                     
           
+                }
         });
    
           //testende
