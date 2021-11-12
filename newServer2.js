@@ -58,7 +58,7 @@ var Endabgabe;
 
 
           let jsonString = JSON.stringify(result);
-          res.write(jsonString);
+          res.write("hi");
 
 
         });
