@@ -53,7 +53,7 @@ var Endabgabe;
         
           console.log(result);
 
-          Url.get('*',function(res,result){  
+          Http.get('*',function(res,result){  
             res.redirect(Url+result.url)
         })
           
