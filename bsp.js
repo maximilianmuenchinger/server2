@@ -35,10 +35,10 @@ var A09Server;
           if (err) throw err;
           var dbo = db.db("Test2");
           
-         
-          result = await dbo.collection("Test2").find( "")
+          var count = await dbo.collection("Test2").count()
+          result = await dbo.collection("Test2").findOne({}, {sort:{$natural:-1}})
         
-          console.log(result);
+          console.log(count);
 
          
           let jsonString = await JSON.stringify(result);
