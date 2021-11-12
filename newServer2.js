@@ -44,7 +44,7 @@ var Endabgabe;
         var MongoClient = require('mongodb').MongoClient;
         var url = "mongodb+srv://User1:F8bHZC2XgkJ9Pekl@maxscluster.juvc9.mongodb.net/<dbname>?retryWrites=true&w=majority";
         
-        MongoClient.connect(url, async function(err, db, res) {
+        MongoClient.connect(url, async function(err, db) {
           if (err) throw err;
           var dbo = db.db("Test2");
           
@@ -53,13 +53,31 @@ var Endabgabe;
         
           console.log(result);
 
-          let url = Url.parse(_request.url, true);
-          
-              for (let key in url.query) {
-                  res.write(key + ":" + url.query[key] + "<br/>");  
-                     
-          
-                }
+          var fs = require('fs');
+
+http.createServer(function (req, res) {
+
+   if (req.method === 'GET' && req.url === '/') {
+
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    fs.readFile('index.html', 'utf-8', function (err, content) {
+      if (err) {
+        res.end('something went wrong.');
+        return;
+      }
+      res.end(content);
+    });
+  }
+
+  if (req.method === 'GET' && req.url === '/data') {
+    var arr = result;
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify(arr), 'utf-8');
+  }
+
+
+
+})
         });
    
           //testende
