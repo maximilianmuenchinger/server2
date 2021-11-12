@@ -53,10 +53,9 @@ var Endabgabe;
         
           console.log(result);
 
-          response.writeHead(301,
-            {Location:  Url +result}
-          );
-          response.end();
+          Url.get('*',function(res,result){  
+            res.redirect(Url+result.url)
+        })
           
         });
           //testende
