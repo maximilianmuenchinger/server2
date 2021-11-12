@@ -22,62 +22,17 @@ var A09Server;
     function handleRequest(_request, _response) {
         console.log("I hear voices!"); // in Konsole wird "i hear voices" ausgegeben wenn der addListener ausgeführt wird
         console.log("test1234");
-
-         //Test
-       
-         var MongoClient = require('mongodb').MongoClient;
-         var url = "mongodb+srv://User1:F8bHZC2XgkJ9Pekl@maxscluster.juvc9.mongodb.net/<dbname>?retryWrites=true&w=majority";
-         var result = ""
-         MongoClient.connect(url, async function(err, db, res) {
-           if (err) throw err;
-           var dbo = db.db("Test2");
-           
-           
-           result = await dbo.collection("Test2").findOne({}, {sort:{$natural:-1}})
-         
-           console.log(result);
- 
-           res.setHeader("content-type", "text/html; charset=utf-8");
-         res.setHeader("Access-Control-Allow-Origin", "*");
- 
- 
- 
- 
- 
-         });
-    
-           //testende
- 
- 
- 
- 
-         if (_request.url) {
-             let url = Url.parse(_request.url, true);
-             //Methode die ihr im Praktikum gezeigt habt 
-             if (url.pathname == "/empty") {
-                 orders.remove({});
-             }
-         }
-         _response.end();
-
-
-
-
-
-
-
-
         //response parameter
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
-        if (_request.url) {
+       
             let url = Url.parse(_request.url, true);
             
-                let jsonString = JSON.stringify(result);
+                let jsonString = JSON.stringify(url.query);
                 _response.write(jsonString);
                 console.log(jsonString);
             
-        }
+        
         _response.end();
     }
 })(A09Server = exports.A09Server || (exports.A09Server = {}));
