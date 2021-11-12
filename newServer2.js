@@ -53,7 +53,7 @@ var Endabgabe;
         
           console.log(result);
 
-          
+          res.write(result);
           
           
         });
