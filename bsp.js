@@ -36,8 +36,8 @@ var A09Server;
           var dbo = db.db("Test2");
           
           var cursor = dbo.collection("Test2").find().toArray();
-            cursor.then(async function (docs) {
-                let jsonString = await JSON.stringify(docs);
+            cursor.then(function (docs) {
+                let jsonString =  JSON.stringify(docs);
                 _response.write(jsonString);
                 console.log(jsonString);
             ;});
