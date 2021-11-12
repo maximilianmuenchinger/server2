@@ -44,7 +44,7 @@ var Endabgabe;
         var MongoClient = require('mongodb').MongoClient;
         var url = "mongodb+srv://User1:F8bHZC2XgkJ9Pekl@maxscluster.juvc9.mongodb.net/<dbname>?retryWrites=true&w=majority";
         
-        MongoClient.connect(url, async function(err, db, response) {
+        MongoClient.connect(url, async function(err, db, res) {
           if (err) throw err;
           var dbo = db.db("Test2");
           
@@ -52,10 +52,9 @@ var Endabgabe;
           var result = await dbo.collection("Test2").findOne({}, {sort:{$natural:-1}})
         
           console.log(result);
-
-          Http.get('*',function(res,result){  
-            res.redirect(Url+result.url)
-        })
+          res.writeHead(302, {
+            location: "https://google.com"});
+          
           
         });
           //testende
