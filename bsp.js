@@ -36,9 +36,15 @@ var A09Server;
           var dbo = db.db("Test2");
           
           var count = await dbo.collection("Test2").count()
-          result = await dbo.collection("Test2").findOne({}, {sort:{$natural:-1}})
+          for (let index = 0; index < await count; index++) {
+              
+            result = await dbo.collection("Test2").findOne({}, {sort:{$natural:-1}})
+
+            console.log(result);
+          }
+          
         
-          console.log(count);
+          
 
          
           let jsonString = await JSON.stringify(result);
