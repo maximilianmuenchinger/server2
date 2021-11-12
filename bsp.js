@@ -38,7 +38,7 @@ var A09Server;
           var count = await dbo.collection("Test2").count()
           for (let index = 0; index < await count; index++) {
               
-            result = await dbo.collection("Test2").find({}).pretty;
+            result = await dbo.collection("Test2").find({}).pretty();
 
             console.log(result);
           }
