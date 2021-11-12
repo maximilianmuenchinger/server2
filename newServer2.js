@@ -52,11 +52,14 @@ var Endabgabe;
           var result = await dbo.collection("Test2").findOne({}, {sort:{$natural:-1}})
         
           console.log(result);
+
+          const server = http.createServer(function (res) {
           res.writeHead(302, {
             location: "https://google.com"});
           
           
         });
+    });
           //testende
 
 
