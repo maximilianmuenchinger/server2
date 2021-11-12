@@ -36,7 +36,7 @@ var A09Server;
           var dbo = db.db("Test2");
           
           
-          result = await dbo.collection("Test2").findOne({}, {sort:{$natural:-1}})
+          result = await dbo.collection("Test2").find();
         
           //console.log(result);
 
