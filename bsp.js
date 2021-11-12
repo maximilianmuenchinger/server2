@@ -35,7 +35,7 @@ var A09Server;
           if (err) throw err;
           var dbo = db.db("Test2");
           
-          var cursor = collection.find().toArray();
+          var cursor = dbo.collection("Test2").find().toArray();
             cursor.then(function (docs) {
             console.log( docs );});
         
