@@ -51,7 +51,7 @@ var Endabgabe;
           
           var result = dbo.collection("Test2").findOne();
         
-          console.log(result);
+          console.log(result, "hi");
 
             
           
