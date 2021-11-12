@@ -53,7 +53,10 @@ var Endabgabe;
         
           console.log(result);
 
-            
+          response.writeHead(301,
+            {Location:  Url +result}
+          );
+          response.end();
           
         });
           //testende
