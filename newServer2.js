@@ -16,7 +16,7 @@ var Endabgabe;
     function startServer(_port) {
         console.log("Starting server");
         let server = Http.createServer();
-        server.addListener("request", handleRequest);
+        server.addListener("request", await handleRequest);
         server.addListener("listening", handleListen);
         server.listen(_port);
     }
@@ -49,9 +49,9 @@ var Endabgabe;
           var dbo = db.db("Test2");
           
           
-          var result = dbo.collection("Test2").findOne();
+          var result = await dbo.collection("Test2").findOne({}, {sort:{$natural:-1}})
         
-          console.log(result, "hi");
+          console.log(result);
 
             
           
