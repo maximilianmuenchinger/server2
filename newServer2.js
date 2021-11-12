@@ -53,7 +53,8 @@ var Endabgabe;
         
           console.log(result);
 
-          
+          res.setHeader("content-type", "text/html; charset=utf-8");
+        res.setHeader("Access-Control-Allow-Origin", "*");
 
 
 
