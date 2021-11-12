@@ -35,14 +35,9 @@ var A09Server;
           if (err) throw err;
           var dbo = db.db("Test2");
           
-          var count = await dbo.collection("Test2").count()
-          for (let index = 0; index < await count; index++) {
-              
-            result = await dbo.collection("Test2").findOne({}, {sort: {natural: index}});
-
-            console.log(result);
-          }
-          
+          var cursor = collection.find().toArray();
+            cursor.then(function (docs) {
+            console.log( docs );
         
           
 
