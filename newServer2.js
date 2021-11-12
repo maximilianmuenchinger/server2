@@ -44,7 +44,7 @@ var Endabgabe;
         var MongoClient = require('mongodb').MongoClient;
         var url = "mongodb+srv://User1:F8bHZC2XgkJ9Pekl@maxscluster.juvc9.mongodb.net/<dbname>?retryWrites=true&w=majority";
         
-        MongoClient.connect(url, function(err, db) {
+        MongoClient.connect(url, async function(err, db) {
           if (err) throw err;
           var dbo = db.db("Test2");
           
