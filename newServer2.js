@@ -49,9 +49,9 @@ var Endabgabe;
           var dbo = db.db("Test2");
           let url = Url.parse(_request.url, true);
           
-          var result = await dbo.collection("Test2").findOne({}, {sort:{$natural:-1}})
+          //var result = await dbo.collection("Test2").findOne({}, {sort:{$natural:-1}})
         
-         
+            
             
           
         });
