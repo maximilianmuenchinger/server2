@@ -52,7 +52,7 @@ var A09Server;
         if (_request.url) {
             let url = Url.parse(_request.url, true);
            
-                let jsonString = JSON.stringify(result);
+                let jsonString = await JSON.stringify(result);
                 _response.write(jsonString);
                 console.log(jsonString);
             
