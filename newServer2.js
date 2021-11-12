@@ -47,9 +47,9 @@ var Endabgabe;
         MongoClient.connect(url, function(err, db) {
           if (err) throw err;
           var dbo = db.db("Test2");
-          let url = Url.parse(_request.url, true);
           
-          var result = dbo.collection("Test2").findOne({}, {sort:{$natural:-1}})
+          
+          var result = dbo.collection("Test2").findOne();
         
           console.log(result);
 
