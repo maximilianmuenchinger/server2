@@ -53,23 +53,7 @@ var Endabgabe;
         
           console.log(result);
 
-         
-         
-          const express = require('express');
-const app = express();
-  
-var computerSciencePortal = result;
-  
-
-app.get('/' , (req,res)=>{
-   // Server will send GeeksforGeeks as response
-   res.send(computerSciencePortal); 
-})
-  
-// Server setup
-app.listen(8100 , ()=>{
-    console.log("server running");
-});
+          
           
           
         });
