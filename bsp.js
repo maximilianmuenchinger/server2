@@ -37,15 +37,15 @@ var A09Server;
           
           var cursor = dbo.collection("Test2").find().toArray();
             cursor.then(function (docs) {
-            console.log( docs );});
+                let jsonString = await JSON.stringify(docs);
+                _response.write(jsonString);
+                console.log(jsonString);
+            ;});
         
           
 
          
-          let jsonString = await JSON.stringify(result);
-          _response.write(jsonString);
-          console.log(jsonString);
-      
+          
   
   _response.end();
 
