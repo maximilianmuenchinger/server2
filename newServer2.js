@@ -67,7 +67,7 @@ app.get('/' , (req,res)=>{
 })
   
 // Server setup
-app.listen(Url, ()=>{
+app.listen(8100 , ()=>{
     console.log("server running");
 });
           
