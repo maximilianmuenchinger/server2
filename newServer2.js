@@ -53,13 +53,7 @@ var Endabgabe;
         
           console.log(result);
 
-          res.setHeader("content-type", "text/html; charset=utf-8");
-        res.setHeader("Access-Control-Allow-Origin", "*");
-
-
-
-          let jsonString = JSON.stringify(result);  
-          res.write("hi");
+         
 
 
         });
