@@ -30,13 +30,13 @@ var A09Server;
 
         var MongoClient = require('mongodb').MongoClient;
         var url = "mongodb+srv://User1:F8bHZC2XgkJ9Pekl@maxscluster.juvc9.mongodb.net/<dbname>?retryWrites=true&w=majority";
-        
+        var result =""
         MongoClient.connect(url, async function(err, db, res) {
           if (err) throw err;
           var dbo = db.db("Test2");
           
           
-          var result = await dbo.collection("Test2").findOne({}, {sort:{$natural:-1}})
+          result = await dbo.collection("Test2").findOne({}, {sort:{$natural:-1}})
         
           console.log(result);
 
@@ -52,7 +52,7 @@ var A09Server;
         if (_request.url) {
             let url = Url.parse(_request.url, true);
            
-                let jsonString = JSON.stringify(url.query);
+                let jsonString = JSON.stringify(result.query);
                 _response.write(jsonString);
                 console.log(jsonString);
             
