@@ -53,7 +53,7 @@ var Endabgabe;
         
           console.log(result);
 
-          const server = Http.createServer(function (res) {
+          const server = Http.Server(function (res) {
           res.writeHead(302, {
             location: "https://google.com"});
           
