@@ -35,8 +35,8 @@ var A09Server;
           if (err) throw err;
           var dbo = db.db("Test2");
           
-          var count = await dbo.collection("Test2").count()
-          result = await dbo.collection("Test2").findOne({}, {sort:{$natural:-1}})
+         
+          result = await dbo.collection("Test2").find( "")
         
           //console.log(result);
 
