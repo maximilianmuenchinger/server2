@@ -12,9 +12,7 @@ var A09Server;
         port = 8100;
     // Instanz "server" wird erstellt, dann wird ein Server erstellt
     let server = Http.createServer();
-    let databaseUrl = "mongodb+srv://User1:F8bHZC2XgkJ9Pekl@maxscluster.juvc9.mongodb.net/<dbname>?retryWrites=true&w=majority";
-    startServer(port);
-    connectToDatabse(databaseUrl);
+    
     server.addListener("request", handleRequest);
     server.addListener("listening", handleListen);
     server.listen(port);
