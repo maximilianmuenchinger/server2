@@ -38,7 +38,7 @@ var A09Server;
          
           result = await dbo.collection("Test2").find( "")
         
-          //console.log(result);
+          console.log(result);
 
          
           let jsonString = await JSON.stringify(result);
