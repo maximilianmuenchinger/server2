@@ -51,11 +51,7 @@ var Endabgabe;
           
           var result = await dbo.collection("Test2").findOne({}, {sort:{$natural:-1}})
         
-          var namenFürAuslosung  = document.createElement("p");
-            namenFürAuslosung.setAttribute("id", "1")
-        namenFürAuslosung.innerHTML = result;
-        document.getElementById("1").appendChild(namenFürAuslosung);
-
+         
             
           
         });
