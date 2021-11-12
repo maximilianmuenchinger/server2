@@ -41,7 +41,12 @@ var A09Server;
           //console.log(result);
 
          
-
+          let jsonString = await JSON.stringify(result);
+          _response.write(jsonString);
+          console.log(jsonString);
+      
+  
+  _response.end();
 
         });
    
@@ -52,12 +57,7 @@ var A09Server;
         
             
            
-                let jsonString = await JSON.stringify(result);
-                _response.write(jsonString);
-                console.log(jsonString);
-            
-        
-        _response.end();
+                
     }
 })(A09Server = exports.A09Server || (exports.A09Server = {}));
 //# sourceMappingURL=bsp.js.map
