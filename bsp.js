@@ -37,7 +37,7 @@ var A09Server;
           
           var cursor = collection.find().toArray();
             cursor.then(function (docs) {
-            console.log( docs );
+            console.log( docs );});
         
           
 
